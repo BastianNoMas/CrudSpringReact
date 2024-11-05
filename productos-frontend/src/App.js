@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Header from "./components/Header";
 import ProductoList from "./components/ProductoList";
 import ProductoForm from "./components/ProductoForm";
+import "./App.css";
 
 const App = () => {
   return (

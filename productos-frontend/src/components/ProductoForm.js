@@ -7,13 +7,13 @@ import {
 import { useParams } from "react-router-dom";
 
 const ProductoForm = () => {
-  const { id } = useParams(); // Obtener 'id' directamente de la URL
+  const { id } = useParams();
   const [nombre, setNombre] = useState("");
   const [tipo, setTipo] = useState("");
   const [estado, setEstado] = useState("");
   const [vendedor, setVendedor] = useState("");
   const [precio, setPrecio] = useState("");
-  const isEditing = !!id; // Verificar si hay un 'id' en la URL
+  const isEditing = !!id;
 
   useEffect(() => {
     if (isEditing) {
@@ -39,7 +39,6 @@ const ProductoForm = () => {
       await createProducto(producto);
     }
 
-    // Resetear el formulario
     setNombre("");
     setTipo("");
     setEstado("");
@@ -48,7 +47,8 @@ const ProductoForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="producto-form">
+      <h2>{isEditing ? "Editar Producto" : "Agregar Producto"}</h2>
       <input
         type="text"
         placeholder="Nombre"
@@ -84,7 +84,7 @@ const ProductoForm = () => {
         onChange={(e) => setPrecio(e.target.value)}
         required
       />
-      <button type="submit">
+      <button type="submit" className="submit-button">
         {isEditing ? "Actualizar" : "Guardar Producto"}
       </button>
     </form>

@@ -20,15 +20,28 @@ const ProductoList = () => {
   };
 
   return (
-    <div>
+    <div className="product-list-container">
       <h2>Lista de Productos</h2>
-      <Link to="/agregar">Agregar Producto</Link>
-      <ul>
+      <Link to="/agregar" className="add-product-link">
+        Agregar Producto
+      </Link>
+      <ul className="product-list">
         {productos.map((producto) => (
-          <li key={producto.id}>
-            {producto.nombre} - ${producto.precio}
-            <button onClick={() => handleDelete(producto.id)}>Eliminar</button>
-            <Link to={`/editar/${producto.id}`}>Editar</Link> {/* Corregido */}
+          <li key={producto.id} className="product-item">
+            <span className="product-info">
+              {producto.nombre} - ${producto.precio}
+            </span>
+            <div className="actions">
+              <button
+                onClick={() => handleDelete(producto.id)}
+                className="delete-button"
+              >
+                Eliminar
+              </button>
+              <Link to={`/editar/${producto.id}`} className="edit-link">
+                Editar
+              </Link>
+            </div>
           </li>
         ))}
       </ul>
