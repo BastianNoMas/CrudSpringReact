@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { getProductos, deleteProducto } from "../api/productoService";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const ProductoList = () => {
   const [productos, setProductos] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchProductos = async () => {
@@ -19,6 +20,10 @@ const ProductoList = () => {
     setProductos(productos.filter((producto) => producto.id !== id));
   };
 
+  const openDetailWindow = (id) => {
+    window.open(`/producto/${id}`, "_blank", "width=600,height=400");
+  };
+
   return (
     <div className="product-list-container">
       <h2>Lista de Productos</h2>
@@ -28,7 +33,10 @@ const ProductoList = () => {
       <ul className="product-list">
         {productos.map((producto) => (
           <li key={producto.id} className="product-item">
-            <span className="product-info">
+            <span
+              className="product-info"
+              onClick={() => openDetailWindow(producto.id)}
+            >
               {producto.nombre} - ${producto.precio}
             </span>
             <div className="actions">

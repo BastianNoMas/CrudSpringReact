@@ -4,7 +4,7 @@ import {
   obtenerProductoPorId,
   updateProducto,
 } from "../api/productoService";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 
 const ProductoForm = () => {
   const { id } = useParams();
@@ -13,6 +13,8 @@ const ProductoForm = () => {
   const [estado, setEstado] = useState("");
   const [vendedor, setVendedor] = useState("");
   const [precio, setPrecio] = useState("");
+  const [mensaje, setMensaje] = useState(""); // Estado para el mensaje
+  const navigate = useNavigate(); // Hook para la navegación
   const isEditing = !!id;
 
   useEffect(() => {
@@ -44,11 +46,19 @@ const ProductoForm = () => {
     setEstado("");
     setVendedor("");
     setPrecio("");
+
+    setMensaje("Producto guardado exitosamente!"); // Establece el mensaje
+    setTimeout(() => {
+      setMensaje(""); // Limpia el mensaje después de 3 segundos
+      navigate("/"); // Redirige a la lista de productos
+    }, 3000);
   };
 
   return (
     <form onSubmit={handleSubmit} className="producto-form">
       <h2>{isEditing ? "Editar Producto" : "Agregar Producto"}</h2>
+      {mensaje && <p className="success-message">{mensaje}</p>}{" "}
+      {/* Mensaje de éxito */}
       <input
         type="text"
         placeholder="Nombre"
