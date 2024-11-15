@@ -19,11 +19,32 @@ public class Cuentas {
     @Setter
     private String username;
     
+    @Column(nullable = false)
+    @Getter
+    @Setter
+    private String rut;
+    
+    @Column (nullable = false)
+    @Getter
+    @Setter
+    private String Direccion;
+    
     
     @Column(nullable = false)
     @Getter
     @Setter
     private String password;
+    
+    @Column(nullable = false)
+    @Getter
+    @Setter
+    private String repetirPassword;
+    
+    @Column (nullable = false)
+    @Getter
+    @Setter
+    private String correoElectronico;
+    
     
     @Column(nullable = false)
     @Getter

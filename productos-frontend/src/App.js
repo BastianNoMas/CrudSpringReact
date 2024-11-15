@@ -5,6 +5,7 @@ import ProductoForm from "./components/ProductoForm";
 import ProductoDetalle from "./components/ProductoDetalle";
 import Home from "./components/Home";
 import Header from "./components/Header";
+import CuentaForm from "./components/CuentaForm";
 import "./App.css";
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
         <Route path="/agregar" element={<ProductoForm />} />
         <Route path="/editar/:id" element={<ProductoForm />} />
         <Route path="/producto/:id" element={<ProductoDetalle />} />
+        <Route path="/crearcuenta" element={<CuentaForm />} />
       </Routes>
     </Router>
   );

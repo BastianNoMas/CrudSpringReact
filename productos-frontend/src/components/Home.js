@@ -16,7 +16,7 @@ const Home = () => {
           Editar Producto
         </Link>
         {/* Ejemplo, ajusta la ruta */}
-        <Link to="/producto/1" className="home-button">
+        <Link to="/crearcuenta" className="home-button">
           Detalle Producto
         </Link>
         {/* Ejemplo, ajusta la ruta */}

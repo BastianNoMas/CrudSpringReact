@@ -15,6 +15,9 @@ public class AuthController {
 
     @PostMapping("/register")
     public ResponseEntity<String> register(@RequestBody Cuentas cuenta) {
+        if (!cuenta.getPassword().equals(cuenta.getRepetirPassword())) {
+            return ResponseEntity.badRequest().body("Las contraseñas no coinciden");
+        }
         try {
             cuentaService.registrarCuenta(cuenta);
             return ResponseEntity.ok("Cuenta registrada con éxito");
@@ -33,3 +36,4 @@ public class AuthController {
         }
     }
 }
+

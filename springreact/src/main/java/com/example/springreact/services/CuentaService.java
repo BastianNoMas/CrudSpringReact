@@ -18,7 +18,8 @@ public class CuentaService {
 //    private PasswordEncoder passwordEncoder;
 
     public Cuentas registrarCuenta(Cuentas cuenta) {
-       // cuenta.setPassword(passwordEncoder.encode(cuenta.getPassword())); // Encriptar contraseña
+        // cuenta.setPassword(passwordEncoder.encode(cuenta.getPassword())); // Encriptar contraseña
+        cuenta.setRole("USER"); // Asignar rol por defecto
         return cuentaRepository.save(cuenta);
     }
 
@@ -29,7 +30,7 @@ public class CuentaService {
     public boolean verificarCredenciales(String username, String password) {
         Optional<Cuentas> cuenta = cuentaRepository.findByUsername(username);
         //return cuenta.isPresent() && passwordEncoder.matches(password, cuenta.get().getPassword());
-         return cuenta.isPresent() && password.equals(cuenta.get().getPassword());
+        return cuenta.isPresent() && password.equals(cuenta.get().getPassword());
     }
 }
 

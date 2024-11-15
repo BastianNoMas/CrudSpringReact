@@ -122,3 +122,62 @@ body {
   font-weight: bold;
   margin-top: 10px;
 }
+
+
+/* Contenedor centrado y estilizado para el formulario de cuenta */
+.cuenta-form {
+  max-width: 500px;
+  margin: 50px auto;
+  padding: 20px;
+  border: 2px solid #444;
+  border-radius: 8px;
+  background-color: #1e1e1e;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Título del formulario */
+.cuenta-form h2 {
+  text-align: center;
+  color: #00adb5;
+}
+
+/* Inputs del formulario */
+.cuenta-form input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #333;
+  border-radius: 5px;
+  background-color: #333;
+  color: #ffffff;
+  box-sizing: border-box;
+}
+
+.cuenta-form input::placeholder {
+  color: #888;
+}
+
+/* Botón de submit */
+.cuenta-form .submit-button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #00adb5;
+  color: #ffffff;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.cuenta-form .submit-button:hover {
+  background-color: #00ffcb;
+}
+
+/* Mensaje de éxito o error */
+.success-message {
+  text-align: center;
+  color: green;
+  font-weight: bold;
+  margin-top: 10px;
+}
