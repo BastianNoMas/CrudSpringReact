@@ -28,7 +28,6 @@ const CuentaForm = () => {
       rut,
       direccion,
       password,
-      repetirPassword,
       correoElectronico,
       role: "usuario", // Establece el rol por defecto a "usuario"
     };
