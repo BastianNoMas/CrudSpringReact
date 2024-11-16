@@ -1,4 +1,6 @@
-// api/cuentaService.js
+import axios from "axios";
+
+const API_URL = "http://localhost:8080/api/auth"; // Ajusta la URL si es diferente
 
 // Crear una nueva cuenta
 export const createCuenta = async (cuentaData) => {
@@ -20,7 +22,7 @@ export const createCuenta = async (cuentaData) => {
     // Retornamos la respuesta convertida a JSON
     return await response.json();
   } catch (error) {
-    // En caso de un error, lanzamos una excepción con el mensaje
-    throw new Error(error.message);
+    // Maneja errores de respuesta del servidor o de red
+    throw new Error(error.response?.data || "Error al crear la cuenta");
   }
 };
