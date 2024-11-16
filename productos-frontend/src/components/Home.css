@@ -4,7 +4,7 @@
     align-items: center;
     justify-content: center;
     height: 100vh;
-    background-color: #f9f9f9;
+    background-color: black;
   }
   
   .button-box {
@@ -32,3 +32,14 @@
     background-color: #0056b3;
   }
   
+
+  .banner {
+    width: 100%; /* Asegura que el contenedor del banner ocupe todo el ancho */
+    overflow: hidden; /* Evita que se salgan los bordes de la imagen */
+  }
+
+  .home-banner {
+    width: 100%; /* Hace que la imagen ocupe todo el ancho del contenedor */
+    height: auto; /* Mantiene la proporción de la imagen */
+    object-fit: cover; /* Asegura que la imagen se recorte si es necesario para cubrir todo el espacio */
+  }
