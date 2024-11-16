@@ -5,6 +5,10 @@ import "./Home.css"; // Para estilos personalizados
 const Home = () => {
   return (
     <div className="home-container">
+      <div className="banner">
+        {" "}
+        <img src="/banner.jpeg" alt="Banner" className="home-banner" />
+      </div>
       <div className="button-box">
         <Link to="/agregar" className="home-button">
           Agregar Producto
