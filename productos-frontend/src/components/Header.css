@@ -1,18 +1,43 @@
 .header {
-    background-color: white;
-    padding: 10px 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-  }
-  
-  .header-content {
-    display: flex;
-    align-items: center;
-  }
-  
-  .logo {
-    height: 50px; /* Ajusta según el tamaño de tu logo */
-  }
-  
+  background-color: white;
+  padding: 10px 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between; /* Espacio entre el logo y los botones */
+  align-items: center; /* Alinea verticalmente los elementos */
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Asegura que el logo y los botones estén separados */
+  width: 100%;
+}
+
+.logo {
+  height: 50px; /* Ajusta según el tamaño de tu logo */
+}
+
+.button-container {
+  display: flex;
+  gap: 15px; /* Espacio entre los botones */
+}
+
+.home-button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  color: #ffffff;
+  font-size: 14px;
+  text-decoration: none;
+  background-color: #00adb5; /* El mismo color que los botones de acción */
+  transition: background-color 0.3s ease;
+}
+
+.home-button:hover {
+  background-color: #00ffcb; /* Cambio de color al pasar el mouse, igual que el resto */
+}
